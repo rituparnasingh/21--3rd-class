@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>scarce likes</title>
+
+  </head>
+  <body>
+    <div id="app">
+      <h3>likes:{{likes}}</h3>
+      <button v-if ="likes <10"@click ="UpByOne()">like!</button>
+      <p v-else>
+        cant like more than 10
+      </p>
+      <button v-if ="likes >0"@click ="DownByOne()">dislike!</button>
+      <p v-else>
+        cant like less than 0
+      </p>
+    </div>
+
+    <script src="vue.js"></script>
+      <script>
+      new Vue({
+        el: '#app',
+        data:{
+          likes:0
+        },
+        methods:{
+          UpByOne: function() {
+            this.likes+=1;
+            },
+            DownByOne:function() {
+              this.likes-=1;
+        }
+        }
+      });
+      </script>
+    </body>
+    </html>
+
+
+
+
+
+
+
+  </body>
+</html>
